@@ -1,62 +1,73 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import agentIcon1 from "@/assets/agent-icon-1.png";
-import agentIcon2 from "@/assets/agent-icon-2.png";
-import agentIcon3 from "@/assets/agent-icon-3.png";
-import agentIcon4 from "@/assets/agent-icon-4.png";
-import agentIcon5 from "@/assets/agent-icon-5.png";
+import { TrendingUp, Megaphone, Headphones, DollarSign, Users } from "lucide-react";
 import avatarAnnika from "@/assets/avatar-annika.png";
 import avatarJacob from "@/assets/avatar-jacob.png";
 
-const annikaAgents = [
+const emilyAgents = [
   {
-    name: "Competitive Analyst",
-    description: "Creating weekly report…",
-    tag: "📊 Sharing to #research",
-    icon: agentIcon1,
+    name: "Sales Automation System",
+    description: "Automates lead qualification and follow-ups across your sales pipeline.",
+    tag: "Qualifying inbound leads · Scoring prospects",
+    workflows: "4 workflows",
+    tools: "CRM · Email · LinkedIn · Slack",
+    icon: TrendingUp,
+    iconColor: "text-purple-600",
     bgClass: "agent-card-green",
   },
   {
-    name: "Social Marketer",
-    description: "Tracking engagement…",
-    tag: "📈 Summarizing results",
-    icon: agentIcon2,
+    name: "Marketing Engine",
+    description: "Repurposes content, tracks competitors, and automates distribution.",
+    tag: "Generating weekly content · Monitoring competitors",
+    workflows: "3 workflows",
+    tools: "LinkedIn · X · Email · Analytics",
+    icon: Megaphone,
+    iconColor: "text-green-600",
     bgClass: "agent-card-teal",
   },
   {
-    name: "Reddit Agent",
-    description: "Monitor subreddits and alert for suitable posts to reply to",
-    tag: "4 workflows",
-    icon: agentIcon3,
+    name: "Customer Support Assistant",
+    description: "Handles repetitive support queries and drafts smart replies.",
+    tag: "Summarizing tickets · Drafting responses",
+    workflows: "5 workflows",
+    tools: "Email · Helpdesk · Slack · Knowledge Base",
+    icon: Headphones,
+    iconColor: "text-yellow-600",
     bgClass: "agent-card-amber",
   },
 ];
 
-const jacobAgents = [
+const shahAgents = [
   {
-    name: "Personal Assistant",
-    description: "Creating meeting briefing…",
-    tag: "📋 Sending briefing to Jacob",
-    icon: agentIcon4,
+    name: "Finance Automation System",
+    description: "Tracks payments, sends reminders, and builds real-time dashboards.",
+    tag: "Monitoring invoices · Generating weekly reports",
+    workflows: "3 workflows",
+    tools: "Stripe · QuickBooks · Sheets · Email",
+    icon: DollarSign,
+    iconColor: "text-blue-600",
     bgClass: "agent-card-blue",
   },
   {
-    name: "Support Agent",
-    description: "Replies to incoming customer support emails",
-    tag: "5 workflows",
-    icon: agentIcon5,
+    name: "HR & Hiring Assistant",
+    description: "Screens resumes and manages interview scheduling automatically.",
+    tag: "Scoring candidates · Scheduling interviews",
+    workflows: "4 workflows",
+    tools: "Forms · Calendar · Email · Slack",
+    icon: Users,
+    iconColor: "text-orange-600",
     bgClass: "agent-card-coral",
   },
 ];
 
 const HeroSection = () => {
-  const [activeTab, setActiveTab] = useState<"annika" | "jacob">("annika");
-  const allCards = activeTab === "annika" 
-    ? [...annikaAgents, ...jacobAgents] 
-    : [...jacobAgents, ...annikaAgents];
+  const [activeTab, setActiveTab] = useState<"emily" | "shah">("emily");
+  const allCards = activeTab === "emily" 
+    ? [...emilyAgents, ...shahAgents] 
+    : [...shahAgents, ...emilyAgents];
 
   return (
-    <section className="hero-gradient pt-20 pb-16 md:pt-24 md:pb-20 overflow-hidden relative">
+    <section className="hero-gradient pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Hero text */}
         <motion.div
@@ -71,12 +82,12 @@ const HeroSection = () => {
             {" "}that<br className="hidden md:block" /> works for you
           </h1>
           <motion.p
-            className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl mx-auto font-medium"
+            className="mt-5 text-sm md:text-base text-muted-foreground max-w-xl mx-auto font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            CodeSquad is the easiest way to create AI agents.
+            We design and implement intelligent workflow systems across sales, marketing, operations, finance, HR, and decision-making.
           </motion.p>
           <motion.div
             className="mt-6"
@@ -98,21 +109,21 @@ const HeroSection = () => {
           transition={{ delay: 0.5, duration: 0.6 }}
         >
           <button
-            onClick={() => setActiveTab("annika")}
+            onClick={() => setActiveTab("emily")}
             className={`flex items-center gap-2 transition-all duration-300 ${
-              activeTab === "annika" ? "opacity-100" : "opacity-50 hover:opacity-75"
+              activeTab === "emily" ? "opacity-100" : "opacity-50 hover:opacity-75"
             }`}
           >
-            <img src={avatarAnnika} alt="Annika" className="w-9 h-9 rounded-full object-cover ring-2 ring-background shadow-md" />
-            <span className="text-sm font-semibold text-foreground">Ahmad's agents</span>
+            <img src={avatarAnnika} alt="Emily" className="w-9 h-9 rounded-full object-cover ring-2 ring-background shadow-md" />
+            <span className="text-sm font-semibold text-foreground">Emily's agents</span>
           </button>
           <button
-            onClick={() => setActiveTab("jacob")}
+            onClick={() => setActiveTab("shah")}
             className={`flex items-center gap-2 transition-all duration-300 ${
-              activeTab === "jacob" ? "opacity-100" : "opacity-50 hover:opacity-75"
+              activeTab === "shah" ? "opacity-100" : "opacity-50 hover:opacity-75"
             }`}
           >
-            <img src={avatarJacob} alt="Jacob" className="w-9 h-9 rounded-full object-cover ring-2 ring-background shadow-md" />
+            <img src={avatarJacob} alt="Shah" className="w-9 h-9 rounded-full object-cover ring-2 ring-background shadow-md" />
             <span className="text-sm font-semibold text-foreground">Shah's agents</span>
           </button>
         </motion.div>
@@ -133,29 +144,68 @@ const HeroSection = () => {
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.4 }}
             >
-              {allCards.map((card, i) => (
-                <motion.div
-                  key={card.name}
-                  className={`${card.bgClass} rounded-xl p-3 cursor-pointer group`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  whileHover={{ y: -4, transition: { duration: 0.25 } }}
-                >
-                  <div className="relative w-full aspect-square rounded-lg overflow-hidden mb-2 flex items-center justify-center">
-                    <motion.img
-                      src={card.icon}
-                      alt={card.name}
-                      className="w-[85%] h-[85%] object-contain"
-                      animate={{ rotate: [0, 360] }}
-                      transition={{ duration: 40 + i * 10, repeat: Infinity, ease: "linear" }}
-                    />
-                  </div>
-                  <h3 className="font-semibold text-xs text-foreground leading-tight">{card.name}</h3>
-                  <p className="text-[10px] text-muted-foreground mt-1 line-clamp-2 leading-relaxed">{card.description}</p>
-                  <p className="text-[10px] text-muted-foreground/70 mt-1.5 truncate">{card.tag}</p>
-                </motion.div>
-              ))}
+              {allCards.map((card, i) => {
+                const IconComponent = card.icon;
+                return (
+                  <motion.div
+                    key={card.name}
+                    className={`${card.bgClass} rounded-xl p-5 cursor-pointer group relative overflow-hidden min-h-[220px] flex flex-col`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ 
+                      y: -6, 
+                      scale: 1.03,
+                      transition: { duration: 0.3, ease: "easeOut" } 
+                    }}
+                  >
+                    {/* Icon - smaller and animated */}
+                    <div className="relative w-full flex items-center justify-center mb-3">
+                      <motion.div
+                        animate={{ 
+                          y: [0, -6, 0],
+                          rotate: [0, 3, -3, 0],
+                        }}
+                        transition={{ 
+                          duration: 2.5 + i * 0.3, 
+                          repeat: Infinity, 
+                          ease: "easeInOut" 
+                        }}
+                        whileHover={{
+                          scale: 1.15,
+                          rotate: 360,
+                          transition: { duration: 0.5 }
+                        }}
+                      >
+                        <IconComponent className={`w-12 h-12 ${card.iconColor} drop-shadow-md`} strokeWidth={2.5} fill="currentColor" />
+                      </motion.div>
+                    </div>
+                    
+                    {/* Content - bullet points style with hover effect */}
+                    <div className="space-y-1.5 flex-1">
+                      <h3 className="font-bold text-xs text-foreground leading-tight mb-2 group-hover:text-foreground transition-colors">{card.name}</h3>
+                      <ul className="space-y-1 text-[9.5px] text-muted-foreground/70 group-hover:text-muted-foreground transition-all duration-300">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-[7px] mt-0.5 group-hover:scale-125 transition-transform">●</span>
+                          <span className="line-clamp-2 leading-relaxed">{card.description}</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-[7px] mt-0.5 group-hover:scale-125 transition-transform">●</span>
+                          <span className="line-clamp-2 leading-relaxed">{card.tag}</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-[7px] mt-0.5 group-hover:scale-125 transition-transform">●</span>
+                          <span>{card.workflows}</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-[7px] mt-0.5 group-hover:scale-125 transition-transform">●</span>
+                          <span className="line-clamp-1">{card.tools}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </AnimatePresence>
         </motion.div>

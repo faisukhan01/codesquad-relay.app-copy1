@@ -207,33 +207,9 @@ const Services = () => {
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 min-h-[60px]">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {service.description}
                     </p>
-                    
-                    {/* Learn More Link with arrow animation */}
-                    <motion.a 
-                      href={service.link}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary group/link"
-                      whileHover={{ x: 4 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <span>Learn More</span>
-                      <motion.svg 
-                        className="w-4 h-4" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                        animate={{ x: [0, 4, 0] }}
-                        transition={{ 
-                          duration: 1.5, 
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </motion.svg>
-                    </motion.a>
                   </div>
                   
                   {/* Decorative corner elements */}

@@ -5,7 +5,6 @@ import StepsSection from "@/components/StepsSection";
 import UseCasesSection from "@/components/UseCasesSection";
 import TemplatesSection from "@/components/TemplatesSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
-import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -18,7 +17,6 @@ const Index = () => {
       <UseCasesSection />
       <TemplatesSection />
       <IntegrationsSection />
-      <CTASection />
       <Footer />
     </div>
   );

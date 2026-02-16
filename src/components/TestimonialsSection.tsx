@@ -109,7 +109,35 @@ const TestimonialsSection = () => {
                   <span className="text-[10px] font-bold text-muted-foreground bg-secondary px-2 py-0.5 rounded-full">{t.platform}</span>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">{t.quote}</p>
+              
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">{t.quote}</p>
+              
+              {/* Professional Links Section */}
+              <div className="flex flex-col gap-2 mb-4 border-t border-border/30 pt-3">
+                <a 
+                  href="https://www.upwork.com/freelancers/~01ea1a66dfb217e6a4?mp_source=share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 flex items-center gap-1"
+                >
+                  📄 Read on Upwork
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/shahzaibhamid/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 flex items-center gap-1"
+                >
+                  💼 Read on LinkedIn
+                </a>
+              </div>
+              
+              {/* 5 Star Rating */}
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, starIndex) => (
+                  <Star key={starIndex} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

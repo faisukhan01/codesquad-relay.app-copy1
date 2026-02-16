@@ -105,46 +105,55 @@
 }
 
 @layer components {
-  /* Agent card styles */
+  /* Agent card styles - Solid vibrant colors without borders */
   .agent-card-green {
-    background: linear-gradient(145deg, hsl(140 30% 95%), hsl(160 25% 92%));
-    border: 1px solid hsl(150 20% 90%);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+    transition: all 0.3s ease;
   }
   .agent-card-green:hover {
-    box-shadow: 0 8px 30px rgba(100, 180, 130, 0.15);
+    box-shadow: 0 12px 35px rgba(251, 191, 36, 0.4);
+    transform: translateY(-6px) scale(1.03);
   }
+  
   .agent-card-teal {
-    background: linear-gradient(145deg, hsl(170 30% 94%), hsl(180 25% 91%));
-    border: 1px solid hsl(175 20% 89%);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+    box-shadow: 0 4px 12px rgba(244, 114, 182, 0.2);
+    transition: all 0.3s ease;
   }
   .agent-card-teal:hover {
-    box-shadow: 0 8px 30px rgba(80, 170, 160, 0.15);
+    box-shadow: 0 12px 35px rgba(244, 114, 182, 0.4);
+    transform: translateY(-6px) scale(1.03);
   }
+  
   .agent-card-amber {
-    background: linear-gradient(145deg, hsl(40 40% 95%), hsl(35 35% 92%));
-    border: 1px solid hsl(38 30% 90%);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+    transition: all 0.3s ease;
   }
   .agent-card-amber:hover {
-    box-shadow: 0 8px 30px rgba(200, 160, 60, 0.15);
+    box-shadow: 0 12px 35px rgba(96, 165, 250, 0.4);
+    transform: translateY(-6px) scale(1.03);
   }
+  
   .agent-card-blue {
-    background: linear-gradient(145deg, hsl(220 40% 95%), hsl(230 35% 93%));
-    border: 1px solid hsl(225 25% 91%);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease;
   }
   .agent-card-blue:hover {
-    box-shadow: 0 8px 30px rgba(80, 120, 200, 0.15);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+    transform: translateY(-6px) scale(1.03);
   }
+  
   .agent-card-coral {
-    background: linear-gradient(145deg, hsl(15 40% 95%), hsl(10 35% 93%));
-    border: 1px solid hsl(12 25% 91%);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    box-shadow: 0 4px 12px rgba(52, 211, 153, 0.2);
+    transition: all 0.3s ease;
   }
   .agent-card-coral:hover {
-    box-shadow: 0 8px 30px rgba(200, 100, 80, 0.15);
+    box-shadow: 0 12px 35px rgba(52, 211, 153, 0.4);
+    transform: translateY(-6px) scale(1.03);
   }
 }
 
