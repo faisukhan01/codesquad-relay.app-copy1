@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import codesquadLogo from "../assets/codesquadlogo.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,13 +18,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[60px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shadow-sm">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-              </svg>
-            </div>
-            <span className="text-lg font-bold text-foreground tracking-tight">CodeSquad</span>
+          <Link to="/" className="flex items-center">
+            <img src={codesquadLogo} alt="CodeSquad" className="h-36" />
           </Link>
 
           {/* Desktop nav */}
@@ -49,9 +45,6 @@ const Navbar = () => {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-2">
-            <button className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 px-4 py-2 rounded-full hover:bg-secondary">
-              Log in
-            </button>
             <button className="text-[13px] font-semibold bg-foreground text-background px-5 py-2 rounded-full hover:opacity-90 transition-all duration-200 shadow-sm">
               Start for free
             </button>
@@ -94,7 +87,6 @@ const Navbar = () => {
               </Link>
               <span className="block text-sm font-medium text-muted-foreground py-1 cursor-not-allowed">Portfolio</span>
               <div className="pt-3 border-t border-border space-y-2">
-                <button className="w-full text-sm font-medium text-muted-foreground py-2">Log in</button>
                 <button className="w-full text-sm font-semibold bg-foreground text-background px-5 py-2.5 rounded-full">Start for free</button>
               </div>
             </div>
